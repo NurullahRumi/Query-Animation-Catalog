@@ -1,0 +1,14 @@
+.outer-container {
+    display:table;
+}
+
+.inner-container{
+    display:table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.app-picture {
+    max-width: 100%;
+    max-height: 100%;
+}

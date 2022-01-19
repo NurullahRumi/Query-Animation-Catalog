@@ -1,0 +1,471 @@
+<wm-page data-ng-controller="QryAnimationCatalogPageController" pagetitle="Qry Animation Catalog" name="page1">
+    <wm-header content="header" name="header1">
+        <wm-param name="pTitle" value="bind:Variables.StatPrgName.dataSet.dataValue" type="string"></wm-param>
+    </wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-panel iconclass="wi wi-filter" autoclose="outsideClick" title="Filter Animation Catalog" name="pnlFilter" class="panel-primary" collapsible="true">
+                <wm-layoutgrid name="layoutgrid1">
+                    <wm-gridrow name="gridrow1">
+                        <wm-gridcolumn columnwidth="2" name="gridcolumn1">
+                            <wm-composite name="composite1">
+                                <wm-label class="col-md-3 control-label" name="label2" caption="Animation category" width="100%" margin="unset 10px unset unset" textalign="left"></wm-label>
+                                <wm-container class="col-md-9" name="container1" width="80%">
+                                    <wm-select name="selectGrp" placeholder="" dataset="bind:Variables.svGetProcEM1000PK0_ANIM_SltGrp.dataSet.poutSltGrp" datafield="processgroup" displayfield="processgroupdesc" datavalue="%"></wm-select>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="2" name="gridcolumn5" padding="unset 5px">
+                            <wm-panel iconclass="" autoclose="outsideClick" title="Process" name="panelExp1" class="panel-info" collapsible="true">
+                                <wm-panel-footer name="panel_footer1"></wm-panel-footer>
+                                <wm-checkboxset height="150" name="chkboxPrssCod" dataset="bind:Variables.svGetProcEM1000PK0_ANIM_PrssCod.dataSet.poutListprocesscode" datafield="process" displayfield="processname" usekeys="false" show="bind:Variables.svGetProcEM1000PK0_ANIM_PrssCod.dataSet.poutListprocesscode.length <= 0 ? false :true"
+                                    width="100%"></wm-checkboxset>
+                            </wm-panel>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="2" name="gridcolumn48_4" padding="unset 5px">
+                            <wm-panel iconclass="" autoclose="outsideClick" title="Themes" name="panelExp2" class="panel-info" collapsible="true">
+                                <wm-checkboxset height="150" name="chkboxTheme" dataset="bind:Variables.svGetProcEM1000PK0_ANIM_SltTheme.dataSet.poutTheme" datafield="theme" displayfield="theme" show="bind:Variables.svGetProcEM1000PK0_ANIM_SltTheme.dataSet.poutTheme.length <= 0 ? false : true"
+                                    width="100%"></wm-checkboxset>
+                            </wm-panel>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="1" name="gridcolumn51_2" padding="unset 5px"></wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="2" name="gridcolumn49_3"></wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="3" name="gridcolumn50_2"></wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow31_1">
+                        <wm-gridcolumn columnwidth="2" name="gridcolumn43_1" horizontalalign="center">
+                            <wm-composite name="composite3">
+                                <wm-label class="col-md-3 control-label" name="label3" caption="Released date from" width="100%" margin="unset 10px unset unset" textalign="left"></wm-label>
+                                <wm-container class="col-md-9" name="container3" width="80%">
+                                    <wm-date name="dateFrm" maxdate="CURRENT_DATE" required="false" showbuttonbar="true"></wm-date>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="2" name="gridcolumn48_2">
+                            <wm-composite name="composite4">
+                                <wm-label class="col-md-3 control-label" name="label4" caption="To" margin="unset 10px unset unset" textalign="left" width="100%"></wm-label>
+                                <wm-container class="col-md-9" name="container4" width="80%">
+                                    <wm-date name="dateTo" maxdate="CURRENT_DATE" datavalue="CURRENT_DATE" showbuttonbar="true"></wm-date>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="2" name="gridcolumn45_1">
+                            <wm-composite name="composite5">
+                                <wm-label class="col-md-3 control-label" name="label5" caption="Animation code" width="100%" margin="unset 10px unset unset" textalign="left"></wm-label>
+                                <wm-container class="col-md-9" name="container5" width="80%">
+                                    <wm-text name="txtAniCod" datavalue="%" on-change="txtAniCodChange($event, $scope, newVal, oldVal)"></wm-text>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="2" name="gridcolumn46_1">
+                            <wm-composite name="composite11">
+                                <wm-label class="col-md-3 control-label" name="label11" caption="With orders" width="100%" margin="unset 10px unset unset" textalign="left"></wm-label>
+                                <wm-container class="col-md-9" name="container11" width="80%">
+                                    <wm-select name="sltOrd" placeholder="%" dataset="bind:Variables.statOrder.dataSet" datafield="dataValue" displayfield="name" datavalue="%"></wm-select>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="2" name="gridcolumn47_1">
+                            <wm-composite name="composite7">
+                                <wm-label class="col-md-3 control-label" name="label7" caption="Client" width="100%" margin="unset 10px unset unset" textalign="left"></wm-label>
+                                <wm-container class="col-md-9" name="container7" width="80%">
+                                    <wm-text name="txtClient" datavalue="%" on-change="txtClientChange($event, $scope, newVal, oldVal)"></wm-text>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="2" name="gridcolumn48"></wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow32_1">
+                        <wm-gridcolumn columnwidth="2" name="gridcolumn49">
+                            <wm-composite name="composite12">
+                                <wm-label class="col-md-3 control-label" name="label12" width="100%" caption="No of colours: from" margin="unset 10px unset unset" textalign="left"></wm-label>
+                                <wm-container class="col-md-9" name="container12" width="80%">
+                                    <wm-text name="txtCltFrm" type="number" datavalue="0" textalign="right"></wm-text>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="2" name="gridcolumn50">
+                            <wm-composite name="composite13">
+                                <wm-label class="col-md-3 control-label" name="label13" caption="To" margin="unset 10px unset unset" textalign="left" width="100%"></wm-label>
+                                <wm-container class="col-md-9" name="container13" width="80%">
+                                    <wm-text name="txtCltTo" type="number" datavalue="99" textalign="right"></wm-text>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="2" name="gridcolumn51">
+                            <wm-composite name="composite9">
+                                <wm-label class="col-md-3 control-label" name="label9" caption="Proposal option" width="100%" margin="unset 10px unset unset" textalign="left"></wm-label>
+                                <wm-container class="col-md-9" name="container9" width="80%">
+                                    <wm-text name="txtPropOpt" datavalue="%"></wm-text>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="2" name="gridcolumn52">
+                            <wm-composite name="composite14">
+                                <wm-label class="col-md-3 control-label" name="label14" caption="Keywords" margin="unset 10px unset unset" width="100%" textalign="left"></wm-label>
+                                <wm-container class="col-md-9" name="container14" width="80%">
+                                    <wm-text name="txtKeyWrd" datavalue="%"></wm-text>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="2" name="gridcolumn53" horizontalalign="center">
+                            <wm-composite name="composite8">
+                                <wm-label class="col-md-3 control-label" name="label8" caption="Reference" width="100%" margin="unset 10px unset unset" textalign="left"></wm-label>
+                                <wm-container class="col-md-9" name="container8" width="80%">
+                                    <wm-text name="txtRef" datavalue="%"></wm-text>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="2" name="gridcolumn48_3"></wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow33_1">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn49_2" horizontalalign="right">
+                            <wm-button class="btn-primary" caption="Query" type="button" margin="unset 0.5em" name="btnQry" on-click="btnQryClick($event, $scope)" iconclass="wi wi-filter-list" disabled="bind:(Variables.statWorkInProgress.dataSet.dataValue == 'Y')?true:false"
+                                show="true"></wm-button>
+                            <wm-button class="btn-secondery" caption="Reset" type="button" margin="unset 0.5em" name="btnReset" on-click="btnResetClick($event, $scope)" iconclass="wi wi-cancel" disabled="bind:(Variables.statWorkInProgress.dataSet.dataValue == 'Y')?true:false"></wm-button>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+            </wm-panel>
+            <wm-panel iconclass="wi wi-details" autoclose="outsideClick" title="Animation catalog" name="panelAnimCat" class="panel-info" collapsible="true">
+                <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-3 md-4 lg-6" class="list-card grey-l4" dataset="bind:Variables.svGetProcEM1000PK0_ANIM_QryAniCatlg.dataSet.poutAnimations" navigation="Classic" name="listAniCatlg" showrecordcount="true"
+                    pagesize="12" showindevice="all" width="100%" height="100%">
+                    <wm-listtemplate layout="media" name="listtemplate2">
+                        <wm-container name="containerBackground" conditionalclass="bind:Widgets.listAniCatlg.currentItem.techcode == Widgets.listAniCatlg.selecteditem.techcode ? 'theme-a1' : ''">
+                            <wm-card name="cardMain" itemlabel="lastorderused" imageheight="100px" showindevice="all">
+                                <wm-card-content fontsize="0.8" fontunit="em" name="card_content2">
+                                    <wm-layoutgrid columns="2" name="layoutgrid4">
+                                        <wm-gridrow name="gridrow6" padding="unset unset 3px unset">
+                                            <wm-gridcolumn colwidth="6" columnwidth="12" class="col-xs-6" name="gridcolumn19_1" horizontalalign="center" padding="0px">
+                                                <wm-tile height="140px" name="tile1" padding="0px" margin="0px">
+                                                    <wm-container name="containerOutPic" class="outer-container" width="100%" height="100%" margin="0px" padding="0px">
+                                                        <wm-container name="ContainerInPic" class="inner-container" width="100%" height="100%" padding="0px" margin="0px">
+                                                            <wm-picture name="PictureMain" picturesource="bind:&quot;services/pfsdb/procedureExecutor/procedure/execute/getProcEM1000PK0_ANIM_ImgForMain?pTechId=&quot;+Widgets.listAniCatlg.currentItemWidgets.lblTechid.caption+&quot;&amp;downloadAsAttachment=true&quot;"
+                                                                encodeurl="false" on-click="PictureMainClick($event, $scope, item, currentItemWidgets)" height="120" pictureplaceholder="resources/images/imagelists/default-image.png" hint="Larger view" pictureaspect="None"
+                                                                class="app-picture" padding="0px" margin="0px"></wm-picture>
+                                                        </wm-container>
+                                                    </wm-container>
+                                                </wm-tile>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow7" padding="5px unset 3px 2px" class="bordered-top bordered-left bordered-right">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn22">
+                                                <wm-label padding="unset 0.5em" name="lblTechCod" caption="bind:Variables.svGetProcEM1000PK0_ANIM_QryAniCatlg.dataSet.poutAnimations[$i].techcode +' Var '+ Variables.svGetProcEM1000PK0_ANIM_QryAniCatlg.dataSet.poutAnimations[$i].techseq"
+                                                    width="100%" textalign="center" fontweight="bold" color="black"></wm-label>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow34" class="bordered-left bordered-right" padding="unset unset 3px 2px">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn49_1">
+                                                <wm-label name="label15" class="col-md-3" caption="Ref" width="30%" textalign="left" fontweight="bold" color="black"></wm-label>
+                                                <wm-label padding="unset 0.5em" caption="bind:Variables.svGetProcEM1000PK0_ANIM_QryAniCatlg.dataSet.poutAnimations[$i].styref" width="60%" name="label16" color="black"></wm-label>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow35" class="bordered-left bordered-right" padding="unset unset 3px 2px">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn50_1">
+                                                <wm-label class="col-md-3" caption="Client" name="label17" width="30%" textalign="left" fontweight="bold" color="black"></wm-label>
+                                                <wm-label padding="unset 0.5em" caption="bind:Variables.svGetProcEM1000PK0_ANIM_QryAniCatlg.dataSet.poutAnimations[$i].clicod" width="60%" name="label18" color="black"></wm-label>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow36" class="bordered-left bordered-right" padding="unset 2px 3px 2px">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn51_1">
+                                                <wm-label class="col-md-3" caption="Last Sample" name="label19" width="30%" textalign="left" fontweight="bold" color="black"></wm-label>
+                                                <wm-label padding="unset 0.5em" name="achrLstSam" caption="bind:Variables.svGetProcEM1000PK0_ANIM_QryAniCatlg.dataSet.poutAnimations[$i].lastsampleused" width="45%" class="col-md-6" color="black"></wm-label>
+                                                <wm-button class="col-md-3 btn-primary" caption="Show all" type="button" name="btnShowSample" width="25%" show="bind:!Widgets.listAniCatlg.currentItemWidgets.achrLstSam.caption?false:true" on-click="btnShowSampleClick($event, $scope, item, currentItemWidgets)"
+                                                    textalign="center" iconclass="" hint="More"></wm-button>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow37" class="bordered-left bordered-right" padding="unset 2px 3px 2px">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn52_1">
+                                                <wm-label class="col-md-3" caption="Last Order" width="30%" name="label21" textalign="left" fontweight="bold" color="black"></wm-label>
+                                                <wm-label padding="unset 0.5em" caption="bind:Variables.svGetProcEM1000PK0_ANIM_QryAniCatlg.dataSet.poutAnimations[$i].lastorderused" width="45%" class="col-md-6" name="achrLstOrd" color="black"></wm-label>
+                                                <wm-button class="col-md-3 btn-primary" caption="Show all" type="button" width="25%" show="bind:!Widgets.listAniCatlg.currentItemWidgets.achrLstOrd.caption?false:true" name="btnShowOrder" on-click="btnShowOrderClick($event, $scope, item, currentItemWidgets)"
+                                                    textalign="center" iconclass="" hint="More"></wm-button>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow38" class="bordered-bottom bordered-left bordered-right" padding="unset 2px 3px 2px">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn53_1">
+                                                <wm-label class="col-md-3" caption="Prop Option" width="30%" name="label23" textalign="left" fontweight="bold" color="black"></wm-label>
+                                                <wm-label padding="unset 0.5em" caption="bind:Variables.svGetProcEM1000PK0_ANIM_QryAniCatlg.dataSet.poutAnimations[$i].proposaloption" width="45%" class="col-md-6" name="achrPropOpt" color="black"></wm-label>
+                                                <wm-button class="col-md-3 btn-primary" caption="Show all" type="button" width="25%" show="bind:!Widgets.listAniCatlg.currentItemWidgets.achrPropOpt.caption?false:true" name="btnShowPropOpt" on-click="btnShowPropOptClick($event, $scope, item, currentItemWidgets)"
+                                                    textalign="center" iconclass="" hint="More"></wm-button>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow39">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn54_1">
+                                                <wm-label padding="unset 0.5em" name="lblTechid" caption="bind:Variables.svGetProcEM1000PK0_ANIM_QryAniCatlg.dataSet.poutAnimations[$i].tecid" show="bind:false" color="black"></wm-label>
+                                                <wm-label padding="unset 0.5em" name="lblForCountMainPic" caption="bind:Variables.svGetProcEM1000PK0_ANIM_QryAniCatlg.dataSet.poutAnimations[$i].cnt" show="bind:false" color="black"></wm-label>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-card-content>
+                            </wm-card>
+                        </wm-container>
+                    </wm-listtemplate>
+                </wm-list>
+            </wm-panel>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-view class="dialog-view" name="view1">
+        <wm-alertdialog name="notificationalertdialog" controller="NotificationDialogController" notificationdialog="alert" message="{{notification.text}}" title="{{notification.title}}" oktext="{{notification.okButtonText}}" alerttype="{{notification.alerttype}}"
+            on-ok="variableOnOk()" on-close="variableOnClose()"></wm-alertdialog>
+    </wm-view>
+    <wm-view class="dialog-view" name="view2">
+        <wm-dialog dialogtype="design-dialog" modal="true" title="bind:&quot;Animation code: &quot;+Widgets.listAniCatlg.selectedItemWidgets.lblTechCod.caption+&quot; used in&quot;" iconclass="" name="dialogLastSample" width="90%">
+            <wm-dialogactions name="dialogactions1">
+                <wm-button class="btn-primary" caption="Exit" on-click="closeDialog()" name="button2" iconclass="wi wi-close"></wm-button>
+            </wm-dialogactions>
+            <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-3 lg-6" class="list-card grey-l4" dataset="bind:Variables.svGetProcEM1000PK0_ANIM_Requestnos.dataSet.poutRequestnos" navigation="Classic" name="listLastSample" showrecordcount="true"
+                pagesize="8">
+                <wm-listtemplate layout="media" name="listtemplate2_1">
+                    <wm-container name="containerBackgroundForSample" conditionalclass="bind:Widgets.listLastSample.currentItem.requestno == Widgets.listLastSample.selecteditem.requestno ? 'theme-a1' : ''">
+                        <wm-card name="cardLastSample" imageheight="200px" height="60%">
+                            <wm-card-content fontsize="0.8" fontunit="em" name="card_content2_1">
+                                <wm-layoutgrid columns="2" name="layoutgrid6">
+                                    <wm-gridrow name="gridrow15" padding="unset unset 3px unset">
+                                        <wm-gridcolumn colwidth="6" columnwidth="12" class="col-xs-6" name="gridcolumn29" horizontalalign="center">
+                                            <wm-tile height="140px" name="tile2" padding="0px" margin="0px">
+                                                <wm-container name="containerOutForSamplePic" class="outer-container" width="100%" height="100%" margin="0px" padding="0px">
+                                                    <wm-container name="containerInForSamplePic" show="bind:Widgets.listLastSample.currentItemWidgets.lblForCountSamplePic.caption <= 0 ? false : true" class="inner-container" width="100%" height="100%" padding="0px"
+                                                        margin="0px">
+                                                        <wm-picture name="PictureLastSam" height="120" on-click="PictureLastSamClick($event, $scope, item, currentItemWidgets)" picturesource="bind:&quot;services/pfsdb/procedureExecutor/procedure/execute/getProcSY2110PK0_get_ImagecardForSample?pPrgid=&quot;+Variables.StatPrgid.dataSet.dataValue+&quot;&amp;pLibraryCat=SAMPLEPICTURE&amp;pDocid=&quot;+Widgets.listLastSample.currentItemWidgets.lblReqno.caption+&quot;&amp;downloadAsAttachment=true&quot;"
+                                                            show="true" hint="Larger view" class="app-picture" padding="0px" margin="0px"></wm-picture>
+                                                    </wm-container>
+                                                </wm-container>
+                                            </wm-tile>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow20" class="bordered-top bordered-left bordered-right" padding="unset unset 3px 2px">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn35">
+                                            <wm-label padding="unset 0.5em" caption="bind:Variables.svGetProcEM1000PK0_ANIM_Requestnos.dataSet.poutRequestnos[$i].requestno" name="lblReqno" width="65%" fontweight="bold" color="black"></wm-label>
+                                            <wm-label padding="unset 0.5em" class="col-md-3" caption="" width="25%" textalign="right" fontweight="bold" name="lblHiddenForSample"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow19" class="bordered-left bordered-right" padding="unset unset 3px 2px">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn34">
+                                            <wm-label padding="unset 0.5em" class="col-md-3" caption="Client" name="label32" width="25%" textalign="left" fontweight="bold" color="black"></wm-label>
+                                            <wm-label padding="unset 0.5em" caption="bind:Variables.svGetProcEM1000PK0_ANIM_Requestnos.dataSet.poutRequestnos[$i].clicod" name="lblClient" width="60%" color="black"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow18" class="bordered-left bordered-right" padding="unset unset 3px 2px">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn33">
+                                            <wm-label padding="unset 0.5em" class="col-md-3" caption="Sts" name="label33" width="25%" textalign="left" fontweight="bold" color="black"></wm-label>
+                                            <wm-label padding="unset 0.5em" caption="bind:Variables.svGetProcEM1000PK0_ANIM_Requestnos.dataSet.poutRequestnos[$i].reqsts" name="lblSts" width="60%" color="black"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow17" class="bordered-left bordered-right" padding="unset unset 3px 2px">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn32">
+                                            <wm-label padding="unset 0.5em" class="col-md-3" caption="Rel date" name="label34" width="25%" textalign="left" fontweight="bold" color="black"></wm-label>
+                                            <wm-label padding="unset 0.5em" caption="bind:Variables.svGetProcEM1000PK0_ANIM_Requestnos.dataSet.poutRequestnos[$i].reldate | toDate: 'dd-MMM-yyyy'" name="lblRelDat" width="60%" color="black"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow16" class="bordered-bottom bordered-left bordered-right" padding="unset unset 3px 2px">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn31">
+                                            <wm-label padding="unset 0.5em" class="col-md-3" caption="Country" name="label36" width="25%" textalign="left" fontweight="bold" color="black"></wm-label>
+                                            <wm-label padding="unset 0.5em" caption="bind:Variables.svGetProcEM1000PK0_ANIM_Requestnos.dataSet.poutRequestnos[$i].smpctycod" name="lblCountry" width="60%" color="black"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow33" padding="unset unset 5px unset">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn48_1">
+                                            <wm-label padding="unset 0.5em" name="lblForCountSamplePic" caption="bind:Variables.svGetProcEM1000PK0_ANIM_Requestnos.dataSet.poutRequestnos[$i].cnt" show="bind:false" color="black"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-card-content>
+                        </wm-card>
+                    </wm-container>
+                </wm-listtemplate>
+            </wm-list>
+        </wm-dialog>
+    </wm-view>
+    <wm-view class="dialog-view" name="view3">
+        <wm-dialog dialogtype="design-dialog" modal="true" title="bind:&quot;Animation code: &quot;+Widgets.listAniCatlg.selectedItemWidgets.lblTechCod.caption+&quot; And variant: &quot;+Widgets.listAniCatlg.selectedItemWidgets.lblTechSeq.caption+&quot; used in&quot;"
+            iconclass="" name="dialogLastOrder" width="90%">
+            <wm-dialogactions name="dialogactions2">
+                <wm-button class="btn-primary" caption="Exit" on-click="closeDialog()" name="button4" iconclass="wi wi-close"></wm-button>
+            </wm-dialogactions>
+            <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-3 lg-6" class="list-card grey-l4" dataset="bind:Variables.svGetProcEM1000PK0_ANIM_query_orders.dataSet.poutOrders" navigation="Classic" name="listLastOder" showrecordcount="true"
+                pagesize="4">
+                <wm-listtemplate layout="media" name="listtemplate3">
+                    <wm-container name="containerBackgroundForOrder" conditionalclass="bind:Widgets.listLastOder.currentItem.ordnum == Widgets.listLastOder.selecteditem.ordnum ? 'theme-a1' : ''">
+                        <wm-card name="cardForOrder">
+                            <wm-card-content fontsize="0.8" fontunit="em" name="card_content3">
+                                <wm-layoutgrid columns="2" name="layoutgrid7">
+                                    <wm-gridrow name="gridrow21" padding="unset unset 3px unset">
+                                        <wm-gridcolumn colwidth="6" columnwidth="12" class="col-xs-6" name="gridcolumn35_1" horizontalalign="center">
+                                            <wm-tile height="140px" name="tile3" padding="0px" margin="0px">
+                                                <wm-container name="containerOutForOrderPic" class="outer-container" width="100%" height="100%" margin="0px" padding="0px">
+                                                    <wm-container name="containerInForOrderPic" show="bind:Widgets.listLastOder.currentItemWidgets.lblForCountOrderPic.caption <= 0 ? false : true" class="inner-container" width="100%" height="100%" padding="0px"
+                                                        margin="0px">
+                                                        <wm-picture name="PictureLastOrd" height="120" picturesource="bind:&quot;services/pfsdb/procedureExecutor/procedure/execute/getProcSY2110PK0_get_imagecardForOrder?pPrgid=&quot;+Variables.StatPrgid.dataSet.dataValue+&quot;&amp;pLibraryCat=PPSAMPLEPICTURE&amp;pDocid=&quot;+Widgets.listLastOder.currentItemWidgets.lblBarcodeNo.caption+&quot;&amp;downloadAsAttachment=true&quot;"
+                                                            on-click="PictureLastOrdClick($event, $scope, item, currentItemWidgets)" pictureplaceholder="resources/images/imagelists/default-image.png" hint="Larger view" class="app-picture"></wm-picture>
+                                                    </wm-container>
+                                                </wm-container>
+                                            </wm-tile>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow24" class="bordered-top bordered-left bordered-right" padding="unset unset 3px 2px">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn38">
+                                            <wm-label padding="unset 0.5em" class="col-md-3" caption="Order no" width="40%" textalign="left" name="label36_1" fontweight="bold" color="black"></wm-label>
+                                            <wm-label padding="unset 0.5em" caption="bind:Variables.svGetProcEM1000PK0_ANIM_query_orders.dataSet.poutOrders[$i].ordnum" width="60%" name="lblOrdnum" color="black"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow23" class="bordered-left bordered-right" padding="unset unset 3px 2px">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn37">
+                                            <wm-label padding="unset 0.5em" class="col-md-3" caption="Garment" width="40%" textalign="left" name="label37" fontweight="bold" color="black"></wm-label>
+                                            <wm-label padding="unset 0.5em" caption="bind:Variables.svGetProcEM1000PK0_ANIM_query_orders.dataSet.poutOrders[$i].garment" width="60%" name="label42" color="black"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow22" class="bordered-left bordered-right" padding="unset unset 3px 2px">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn36">
+                                            <wm-label padding="unset 0.5em" class="col-md-3" caption="Shipment date" width="40%" textalign="left" name="label38" fontweight="bold" color="black"></wm-label>
+                                            <wm-label padding="unset 0.5em" caption="bind:Variables.svGetProcEM1000PK0_ANIM_query_orders.dataSet.poutOrders[$i].sshpdat | toDate: 'dd-MMM-yyyy'" width="60%" name="label43" color="black"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow21_1" padding="unset unset 3px 2px" class="bordered-left bordered-right">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn35_2">
+                                            <wm-label padding="unset 0.5em" class="col-md-3" caption="Quantity" width="40%" textalign="left" name="label39" fontweight="bold" color="black"></wm-label>
+                                            <wm-label padding="unset 0.5em" caption="bind:Variables.svGetProcEM1000PK0_ANIM_query_orders.dataSet.poutOrders[$i].qtyord" width="60%" name="label44" color="black"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow20_1" padding="unset unset 3px 2px" class="bordered-bottom bordered-left bordered-right">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn34_1">
+                                            <wm-label padding="unset 0.5em" class="col-md-3" caption="Country" width="40%" textalign="left" name="label40" fontweight="bold" color="black"></wm-label>
+                                            <wm-label padding="unset 0.5em" caption="bind:Variables.svGetProcEM1000PK0_ANIM_query_orders.dataSet.poutOrders[$i].ctycod" width="60%" name="label45" color="black"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow32_2" padding="unset unset 5px unset">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn47_2">
+                                            <wm-label padding="unset 0.5em" class="displayField" caption="bind:Variables.svGetProcEM1000PK0_ANIM_query_orders.dataSet.poutOrders[$i].barcodeno" width="60%" name="lblBarcodeNo" show="bind:false" color="black"></wm-label>
+                                            <wm-label padding="unset 0.5em" name="lblForCountOrderPic" caption="bind:Variables.svGetProcEM1000PK0_ANIM_query_orders.dataSet.poutOrders[$i].cnt" show="bind:false" color="black"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-card-content>
+                        </wm-card>
+                    </wm-container>
+                </wm-listtemplate>
+            </wm-list>
+        </wm-dialog>
+    </wm-view>
+    <wm-view class="dialog-view" name="view4">
+        <wm-dialog dialogtype="design-dialog" modal="true" title="bind:&quot;Animation code: &quot;+Widgets.listAniCatlg.selectedItemWidgets.lblTechCod.caption+&quot; And variant: &quot;+Widgets.listAniCatlg.selectedItemWidgets.lblTechSeq.caption+&quot; used in&quot;"
+            iconclass="" name="dialogPropOption" width="90%">
+            <wm-dialogactions name="dialogactions3">
+                <wm-button class="btn-primary" caption="Exit" on-click="closeDialog()" name="button4_1" iconclass="wi wi-close"></wm-button>
+            </wm-dialogactions>
+            <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-3 lg-6" class="list-card grey-l4" dataset="bind:Variables.svGetProcEM1000PK0_ANIM_query_dsgproposaloptions.dataSet.poutSimilaritems" navigation="Classic" name="listPropOption"
+                showrecordcount="true" pagesize="4">
+                <wm-listtemplate layout="media" name="listtemplate4">
+                    <wm-container name="containerBackgroundForPropOption" conditionalclass="bind:Widgets.listPropOption.currentItem.proposaloption == Widgets.listPropOption.selecteditem.proposaloption ? 'theme-a1' : ''">
+                        <wm-card name="cardPropOption">
+                            <wm-card-content fontsize="0.8" fontunit="em" name="card_content4">
+                                <wm-layoutgrid columns="2" name="layoutgrid8">
+                                    <wm-gridrow name="gridrow27" padding="unset unset 3px unset">
+                                        <wm-gridcolumn colwidth="6" columnwidth="12" class="col-xs-6" name="gridcolumn41" horizontalalign="center">
+                                            <wm-tile height="140px" name="tile4" padding="0px" margin="0px">
+                                                <wm-container name="containerOutForPropOptPic" class="outer-container" width="100%" height="100%" margin="0px" padding="0px">
+                                                    <wm-container name="containerInForPropOptPic" show="bind:Widgets.listPropOption.currentItemWidgets.lblForCountPropOptPic.caption <=0 ? false : true" class="inner-container" width="100%" height="100%" padding="0px"
+                                                        margin="0px">
+                                                        <wm-picture name="PicturePropOrd" picturesource="bind:&quot;services/pfsdb/procedureExecutor/procedure/execute/getProcSY2110PK0_get_imagecardForPropOpt?pPrgid=&quot;+Variables.StatPrgid.dataSet.dataValue+&quot;&amp;pLibraryCat=DESIGNPROPOSALOPTION&amp;pDocid=&quot;+Widgets.listPropOption.currentItemWidgets.lblProposalOption.caption+&quot;&amp;downloadAsAttachment=true&quot;"
+                                                            height="120" on-click="PicturePropOrdClick($event, $scope, item, currentItemWidgets)" hint="Larger view" class="app-picture"></wm-picture>
+                                                    </wm-container>
+                                                </wm-container>
+                                            </wm-tile>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow32" padding="unset unset 3px 2px" class="bordered-top bordered-left bordered-roght">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn47">
+                                            <wm-label padding="unset 0.5em" class="col-md-3" caption="Proposal Option" width="40%" textalign="left" name="label41_1" fontweight="bold" color="black"></wm-label>
+                                            <wm-label padding="unset 0.5em" caption="bind:Variables.svGetProcEM1000PK0_ANIM_query_dsgproposaloptions.dataSet.poutSimilaritems[$i].proposaloption" width="60%" name="lblProposalOption" color="black"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow31" padding="unset unset 3px 2px" class="bordered-left bordered-roght">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn46">
+                                            <wm-label padding="unset 0.5em" class="col-md-3" caption="Design Type" width="40%" textalign="left" name="label42_1" fontweight="bold" color="black"></wm-label>
+                                            <wm-label padding="unset 0.5em" caption="bind:Variables.svGetProcEM1000PK0_ANIM_query_dsgproposaloptions.dataSet.poutSimilaritems[$i].dsgtype" width="60%" name="label47" color="black"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow30" padding="unset unset 3px 2px" class="bordered-left bordered-roght">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn45">
+                                            <wm-label padding="unset 0.5em" class="col-md-3" caption="Designer" width="40%" textalign="left" name="label43_1" fontweight="bold" color="black"></wm-label>
+                                            <wm-label padding="unset 0.5em" caption="bind:Variables.svGetProcEM1000PK0_ANIM_query_dsgproposaloptions.dataSet.poutSimilaritems[$i].designer" width="60%" name="label48" color="black"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow29" padding="unset unset 3px 2px" class="bordered-left bordered-roght">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn44">
+                                            <wm-label padding="unset 0.5em" class="col-md-3" caption="Season" width="40%" textalign="left" name="label44_1" fontweight="bold" color="black"></wm-label>
+                                            <wm-label padding="unset 0.5em" caption="bind:Variables.svGetProcEM1000PK0_ANIM_query_dsgproposaloptions.dataSet.poutSimilaritems[$i].ssncod" width="60%" name="label49" color="black"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow31_2" padding="unset unset 3px 2px" class="brrdered-bottom bordered-left bordered-roght">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn46_2">
+                                            <wm-label padding="unset 0.5em" class="col-md-3" caption="Themes" width="40%" textalign="left" name="label51" fontweight="bold" color="black"></wm-label>
+                                            <wm-label padding="unset 0.5em" caption="bind:Variables.svGetProcEM1000PK0_ANIM_query_dsgproposaloptions.dataSet.poutSimilaritems[$i].themecategory" width="60%" name="label52" color="black"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow28" padding="unset unset 5px unset">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn43">
+                                            <wm-label padding="unset 0.5em" class="displayField" caption="bind:Variables.svGetProcEM1000PK0_ANIM_query_dsgproposaloptions.dataSet.poutSimilaritems[$i].proposaloption" width="60%" name="lblPropOption" show="bind:false"
+                                                color="black"></wm-label>
+                                            <wm-label padding="unset 0.5em" name="lblForCountPropOptPic" caption="bind:Variables.svGetProcEM1000PK0_ANIM_query_dsgproposaloptions.dataSet.poutSimilaritems[$i].cnt" show="bind:false" color="black"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-card-content>
+                        </wm-card>
+                    </wm-container>
+                </wm-listtemplate>
+            </wm-list>
+        </wm-dialog>
+    </wm-view>
+    <wm-view class="dialog-view" name="view5">
+        <wm-dialog dialogtype="design-dialog" modal="true" title="bind:&quot;Animation code: &quot;+Widgets.listAniCatlg.selectedItemWidgets.lblTechCod.caption" iconclass="" name="dialogImageForMain" width="80%" height="80%">
+            <wm-dialogactions name="dialogactions4">
+                <wm-button class="btn-secendory" caption="Reset Picture" type="button" margin="unset 0.5em" name="btnRstImageForMain" on-click="btnRstImageForMainClick($event, $scope)" iconclass="wi wi-autorenew"></wm-button>
+                <wm-button class="btn-primary" caption="Exit" on-click="closeDialog()" name="button8" iconclass="wi wi-close"></wm-button>
+            </wm-dialogactions>
+            <wm-container name="container13_1" horizontalalign="center" height="50%" class="grey-l4">
+                <wm-picture name="ZoomPicForMain" id="image" picturesource="bind:&quot;services/pfsdb/procedureExecutor/procedure/execute/getProcEM1000PK0_ANIM_ImgForMain?pTechId=&quot;+Widgets.listAniCatlg.selectedItemWidgets.lblTechid.caption+&quot;&amp;downloadAsAttachment=true&quot;"
+                    on-mouseenter="ZoomPicForMainMouseenter($event, $scope)" pictureaspect="None" width="50%" height="50%" hint="scroll to make larger"></wm-picture>
+            </wm-container>
+        </wm-dialog>
+    </wm-view>
+    <wm-view class="dialog-view" name="view6">
+        <wm-dialog dialogtype="design-dialog" modal="true" title="bind:&quot;Request no: &quot;+Widgets.listLastSample.selectedItemWidgets.lblReqno.caption" iconclass="" name="dialogImageForSample" width="80%" height="80%">
+            <wm-dialogactions name="dialogactions5">
+                <wm-button class="btn-secendory" caption="Reset Picture" type="button" margin="unset 0.5em" name="btnRstImageForSample" on-click="btnRstImageForSampleClick($event, $scope)" iconclass="wi wi-autorenew"></wm-button>
+                <wm-button class="btn-primary" caption="Exit" on-click="closeDialog()" name="button9" iconclass="wi wi-close"></wm-button>
+            </wm-dialogactions>
+            <wm-container name="container14_1" horizontalalign="center" height="50%" class="grey-l4">
+                <wm-picture name="ZoomPicForSample" id="image" picturesource="bind:&quot;services/pfsdb/procedureExecutor/procedure/execute/getProcSY2110PK0_get_ImagecardForSample?pPrgid=&quot;+Variables.StatPrgid.dataSet.dataValue+&quot;&amp;pLibraryCat=SAMPLEPICTURE&amp;pDocid=&quot;+Widgets.listLastSample.selectedItemWidgets.lblReqno.caption+&quot;&amp;downloadAsAttachment=true&quot;"
+                    height="50%" on-mouseenter="ZoomPicForSampleMouseenter($event, $scope)" width="50%" hint="scroll to make larger"></wm-picture>
+            </wm-container>
+        </wm-dialog>
+    </wm-view>
+    <wm-view class="dialog-view" name="view7">
+        <wm-dialog dialogtype="design-dialog" modal="true" title="bind:&quot;Order: &quot; +Widgets.listLastOder.selectedItemWidgets.lblOrdnum.caption" iconclass="" name="dialogImageForOrder" width="80%" height="80%">
+            <wm-dialogactions name="dialogactions6">
+                <wm-button class="btn-secendory" caption="Reset Picture" type="button" margin="unset 0.5em" name="btnRstImageForOrder" on-click="btnRstImageForOrderClick($event, $scope)" iconclass="wi wi-autorenew"></wm-button>
+                <wm-button class="btn-primary" caption="Exit" on-click="closeDialog()" name="button10" iconclass="wi wi-close"></wm-button>
+            </wm-dialogactions>
+            <wm-container name="container15" horizontalalign="center" height="50%" class="grey-l4">
+                <wm-picture name="ZoomPicForOrder" id="image" picturesource="bind:&quot;services/pfsdb/procedureExecutor/procedure/execute/getProcSY2110PK0_get_imagecardForOrder?pPrgid=&quot;+Variables.StatPrgid.dataSet.dataValue+&quot;&amp;pLibraryCat=PPSAMPLEPICTURE&amp;pDocid=&quot;+Widgets.listLastOder.selectedItemWidgets.lblBarcodeNo.caption+&quot;&amp;downloadAsAttachment=true&quot;"
+                    height="50%" on-mouseenter="ZoomPicForOrderMouseenter($event, $scope)" width="50%" hint="scroll to make larger"></wm-picture>
+            </wm-container>
+        </wm-dialog>
+    </wm-view>
+    <wm-view class="dialog-view" name="view8">
+        <wm-dialog dialogtype="design-dialog" modal="true" title="bind:&quot;Proposal option: &quot; +Widgets.listPropOption.selectedItemWidgets.lblProposalOption.caption" iconclass="" name="dialogImageforPropOpt" width="80%" height="80%">
+            <wm-dialogactions name="dialogactions7">
+                <wm-button class="btn-secendory" caption="Reset Picture" type="button" margin="unset 0.5em" name="btnRstImageForPropOpt" on-click="btnRstImageForPropOptClick($event, $scope)" iconclass="wi wi-autorenew"></wm-button>
+                <wm-button class="btn-primary" caption="Exit" on-click="closeDialog()" name="button11" iconclass="wi wi-close"></wm-button>
+            </wm-dialogactions>
+            <wm-container name="container16" height="50%" horizontalalign="center" class="grey-l4">
+                <wm-picture name="ZoomPicForPropOpt" id="image" height="50%" picturesource="bind:&quot;services/pfsdb/procedureExecutor/procedure/execute/getProcSY2110PK0_get_imagecardForPropOpt?pPrgid=&quot;+Variables.StatPrgid.dataSet.dataValue+&quot;&amp;pLibraryCat=DESIGNPROPOSALOPTION&amp;pDocid=&quot;+Widgets.listPropOption.selectedItemWidgets.lblProposalOption.caption+&quot;&amp;downloadAsAttachment=true&quot;"
+                    on-click="ZoomPicForPropOptClick($event, $scope)" on-mouseenter="ZoomPicForPropOptMouseenter($event, $scope)" width="50%" hint="scroll to make larger"></wm-picture>
+            </wm-container>
+        </wm-dialog>
+    </wm-view>
+</wm-page>

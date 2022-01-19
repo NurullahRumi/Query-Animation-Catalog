@@ -1,0 +1,19 @@
+[ {
+  "name" : "admin",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "user",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "QRYANIMCATALOG_VIEWPAGE",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "QryAnimationCatalog"
+  }
+} ]

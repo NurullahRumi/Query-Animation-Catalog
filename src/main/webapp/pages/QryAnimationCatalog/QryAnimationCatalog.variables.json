@@ -1,0 +1,352 @@
+{
+  "notifMsg" : {
+    "_id" : "wm-notifMsg-wm.NotificationVariable-1570015582301",
+    "name" : "notifMsg",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "title",
+      "value" : "bind:Variables.StatPrgName.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "alerttype",
+      "value" : "error",
+      "type" : "string"
+    } ],
+    "operation" : "alert"
+  },
+  "statOrder" : {
+    "_id" : "wm-statOrder-wm.Variable-1570170166966",
+    "name" : "statOrder",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Y",
+      "dataValue" : "Y"
+    }, {
+      "name" : "N",
+      "dataValue" : "N"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "saveInPhonegap" : false
+  },
+  "StatPrgid" : {
+    "_id" : "wm-StatPrgid-wm.Variable-1570015511717",
+    "name" : "StatPrgid",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "EM7005W01",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : "EM7005W01"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "StatPrgName" : {
+    "_id" : "wm-StatPrgName-wm.Variable-1570015552740",
+    "name" : "StatPrgName",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "Query Animation Catalog",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statWorkInProgress" : {
+    "_id" : "wm-statWorkInProgress-wm.Variable-1571659319686",
+    "name" : "statWorkInProgress",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : "N"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svGetProcEM1000PK0_ANIM_PrssCod" : {
+    "_id" : "wm-svGetProcEM1000PK0_ANIM_PrssCod-wm.ServiceVariable-1570017866649",
+    "name" : "svGetProcEM1000PK0_ANIM_PrssCod",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.StatPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "p_Grp",
+      "value" : "bind:Widgets.selectGrp.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimPrssCodResponse",
+    "service" : "pfsdb",
+    "operation" : "executeGetProcEM1000PK0_ANIM_PrssCod",
+    "operationId" : "ProcedureExecutionController_executeGetProcEM1000PK0_ANIM_PrssCod",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svGetProcEM1000PK0_ANIM_PrssCodonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svGetProcEM1000PK0_ANIM_QryAniCatlg" : {
+    "_id" : "wm-svGetProcEM1000PK0_ANIM_QryAniCatlg-wm.ServiceVariable-1570077350590",
+    "name" : "svGetProcEM1000PK0_ANIM_QryAniCatlg",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.StatPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pDatefrom",
+      "value" : "bind:Widgets.dateFrm.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pDateto",
+      "value" : "bind:Widgets.dateTo.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pTechcode",
+      "value" : "bind:!Widgets.txtAniCod.datavalue ? \"%\" : Widgets.txtAniCod.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pReference",
+      "value" : "bind:!Widgets.txtRef.datavalue ? \"%\" : Widgets.txtRef.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pClicod",
+      "value" : "bind:!Widgets.txtClient.datavalue ? \"%\" : Widgets.txtClient.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pUsedinorder",
+      "value" : "bind:!Widgets.sltOrd.datavalue ? \"%\" : Widgets.sltOrd.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pProcesses",
+      "value" : "bind:Widgets.chkboxPrssCod.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pProposaloption",
+      "value" : "bind:!Widgets.txtPropOpt.datavalue ? \"%\" : Widgets.txtPropOpt.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pThemes",
+      "value" : "bind:!Widgets.chkboxTheme.datavalue ? \"%\" : Widgets.chkboxTheme.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pNoofcoloursfrom",
+      "value" : "bind:Widgets.txtCltFrm.datavalue",
+      "type" : "integer"
+    }, {
+      "target" : "pNoofcoloursto",
+      "value" : "bind:Widgets.txtCltTo.datavalue",
+      "type" : "integer"
+    }, {
+      "target" : "pKeywords",
+      "value" : "bind:!Widgets.txtKeyWrd.datavalue ? \"%\" : Widgets.txtKeyWrd.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimQryAniCatlgResponse",
+    "service" : "pfsdb",
+    "operation" : "executeGetProcEM1000PK0_ANIM_QryAniCatlg",
+    "operationId" : "ProcedureExecutionController_executeGetProcEM1000PK0_ANIM_QryAniCatlg",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svGetProcEM1000PK0_ANIM_QryAniCatlgonSuccess($event, $scope)",
+    "onError" : "svGetProcEM1000PK0_ANIM_QryAniCatlgonError($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svGetProcEM1000PK0_ANIM_query_dsgproposaloptions" : {
+    "_id" : "wm-svGetProcEM1000PK0_ANIM_query_dsgproposaloptions-wm.ServiceVariable-1570249212582",
+    "name" : "svGetProcEM1000PK0_ANIM_query_dsgproposaloptions",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.StatPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pDsgproposaloption",
+      "value" : "bind:Widgets.listAniCatlg.selectedItemWidgets.achrPropOpt.caption",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimQueryDsgproposaloptionsResponse",
+    "service" : "pfsdb",
+    "operation" : "executeGetProcEM1000PK0_ANIM_query_dsgproposaloptions",
+    "operationId" : "ProcedureExecutionController_executeGetProcEM1000PK0_ANIM_query_dsgproposaloptions",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svGetProcEM1000PK0_ANIM_query_orders" : {
+    "_id" : "wm-svGetProcEM1000PK0_ANIM_query_orders-wm.ServiceVariable-1570185999022",
+    "name" : "svGetProcEM1000PK0_ANIM_query_orders",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.StatPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pTechcode",
+      "value" : "bind:Widgets.listAniCatlg.selecteditem.techcode",
+      "type" : "string"
+    }, {
+      "target" : "pTechseq",
+      "value" : "bind:Widgets.listAniCatlg.selecteditem.techseq",
+      "type" : "integer"
+    }, {
+      "target" : "pOrdnum",
+      "value" : "bind:Widgets.listAniCatlg.selecteditem.lastorderused",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimQueryOrdersResponse",
+    "service" : "pfsdb",
+    "operation" : "executeGetProcEM1000PK0_ANIM_query_orders",
+    "operationId" : "ProcedureExecutionController_executeGetProcEM1000PK0_ANIM_query_orders",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svGetProcEM1000PK0_ANIM_Requestnos" : {
+    "_id" : "wm-svGetProcEM1000PK0_ANIM_Requestnos-wm.ServiceVariable-1570167690034",
+    "name" : "svGetProcEM1000PK0_ANIM_Requestnos",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.StatPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pTechcode",
+      "value" : "bind:Widgets.listAniCatlg.selecteditem.techcode",
+      "type" : "string"
+    }, {
+      "target" : "pTechseq",
+      "value" : "bind:Widgets.listAniCatlg.selecteditem.techseq",
+      "type" : "integer"
+    }, {
+      "target" : "pRequestno",
+      "value" : "bind:Widgets.listAniCatlg.selecteditem.lastsampleused",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimRequestnosResponse",
+    "service" : "pfsdb",
+    "operation" : "executeGetProcEM1000PK0_ANIM_Requestnos",
+    "operationId" : "ProcedureExecutionController_executeGetProcEM1000PK0_ANIM_Requestnos",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svGetProcEM1000PK0_ANIM_RequestnosonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svGetProcEM1000PK0_ANIM_SltGrp" : {
+    "_id" : "wm-svGetProcEM1000PK0_ANIM_SltGrp-wm.ServiceVariable-1570016986584",
+    "name" : "svGetProcEM1000PK0_ANIM_SltGrp",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.StatPrgid.dataSet.dataValue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimSltGrpResponse",
+    "service" : "pfsdb",
+    "operation" : "executeGetProcEM1000PK0_ANIM_SltGrp",
+    "operationId" : "ProcedureExecutionController_executeGetProcEM1000PK0_ANIM_SltGrp",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svGetProcEM1000PK0_ANIM_SltTheme" : {
+    "_id" : "wm-svGetProcEM1000PK0_ANIM_SltTheme-wm.ServiceVariable-1570019570426",
+    "name" : "svGetProcEM1000PK0_ANIM_SltTheme",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.StatPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pGrp",
+      "value" : "bind:Widgets.selectGrp.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimSltThemeResponse",
+    "service" : "pfsdb",
+    "operation" : "executeGetProcEM1000PK0_ANIM_SltTheme",
+    "operationId" : "ProcedureExecutionController_executeGetProcEM1000PK0_ANIM_SltTheme",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  }
+}

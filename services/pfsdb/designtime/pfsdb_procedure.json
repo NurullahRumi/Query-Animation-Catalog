@@ -1,0 +1,1558 @@
+{
+  "getProcEM1000PK0_ANIM_ImgForMain" : {
+    "name" : "getProcEM1000PK0_ANIM_ImgForMain",
+    "description" : "Image for Animation catalog",
+    "version" : "V2",
+    "procedureString" : "CALL EM1000PK0_ANIM.sproc_ImgForMain( :pTechId,:pOutImg)",
+    "parameters" : [ {
+      "name" : "pTechId",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "999",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutImg",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimImgForMainResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutImg",
+        "fieldName" : "poutImg",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "byte[]",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "getProcEM1000PK0_ANIM_ImgForPropOpt" : {
+    "name" : "getProcEM1000PK0_ANIM_ImgForPropOpt",
+    "description" : "Image for Prop Option",
+    "version" : "V2",
+    "procedureString" : "CALL EM1000PK0_ANIM.sproc_ImgForPropOpt( :pDsgproposaloption, :pOutImg)",
+    "parameters" : [ {
+      "name" : "pDsgproposaloption",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "16FP000006/007B",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutImg",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimImgForPropOptResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutImg",
+        "fieldName" : "poutImg",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "byte[]",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "getProcEM1000PK0_ANIM_PrssCod" : {
+    "name" : "getProcEM1000PK0_ANIM_PrssCod",
+    "description" : "List of Process code for a Group",
+    "version" : "V2",
+    "procedureString" : "CALL EM1000PK0_ANIM.sproc_get_processcodes( :pPrgid, :pUsrid, :p_Grp, :pOutListprocesscode)",
+    "parameters" : [ {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "T",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00026",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_Grp",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "PRTING",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutListprocesscode",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimPrssCodResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutListprocesscode",
+        "fieldName" : "poutListprocesscode",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimPrssCodResponsePoutListprocesscode",
+          "list" : true,
+          "properties" : [ {
+            "name" : "PROCESSGROUP",
+            "fieldName" : "processgroup",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "PROCCODE",
+            "fieldName" : "proccode",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "PROCESS",
+            "fieldName" : "process",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "PROCESSNAME",
+            "fieldName" : "processname",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getProcEM1000PK0_ANIM_QryAniCatlg" : {
+    "name" : "getProcEM1000PK0_ANIM_QryAniCatlg",
+    "description" : "Query for Animation catalog",
+    "version" : "V2",
+    "procedureString" : "CALL EM1000PK0_ANIM.sproc_query_animationcatalog( :pPrgid, :pUsrid, \n                                       :pDatefrom, :pDateto, :pTechcode,\n                                       :pReference,\n                                       :pClicod,\n                                       :pUsedinorder,\n                                       :pProcesses,\n                                       :pProposaloption,\n                                       :pThemes,\n                                       :pNoofcoloursfrom,\n                                       :pNoofcoloursto,\n                                       :pKeywords,\n                                       :pOutAnimations)",
+    "parameters" : [ {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "T",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00026",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDatefrom",
+      "type" : "date",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2019-09-14",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDateto",
+      "type" : "date",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2019-10-04",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pTechcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pReference",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pClicod",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsedinorder",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pProcesses",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "\"EMBELL\", \"HOTFIX\", \"EMBRD\"",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pProposaloption",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pThemes",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pNoofcoloursfrom",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pNoofcoloursto",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "99",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pKeywords",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutAnimations",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimQryAniCatlgResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutAnimations",
+        "fieldName" : "poutAnimations",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimQryAniCatlgResponsePoutAnimations",
+          "list" : true,
+          "properties" : [ {
+            "name" : "TECID",
+            "fieldName" : "tecid",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Long",
+              "list" : false
+            }
+          }, {
+            "name" : "TECHCODE",
+            "fieldName" : "techcode",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "TECHSEQ",
+            "fieldName" : "techseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "CLICOD",
+            "fieldName" : "clicod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "STYREF",
+            "fieldName" : "styref",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LASTSAMPLEUSED",
+            "fieldName" : "lastsampleused",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LASTORDERUSED",
+            "fieldName" : "lastorderused",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "PROPOSALOPTION",
+            "fieldName" : "proposaloption",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "RELDATE",
+            "fieldName" : "reldate",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.time.LocalDateTime",
+              "list" : false
+            }
+          }, {
+            "name" : "CNT",
+            "fieldName" : "cnt",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getProcEM1000PK0_ANIM_Requestnos" : {
+    "name" : "getProcEM1000PK0_ANIM_Requestnos",
+    "description" : "List of request no",
+    "version" : "V2",
+    "procedureString" : "CALL EM1000PK0_ANIM.sproc_query_requestnos( :pPrgid, upper(:pUsrid), :pTechcode, :pTechseq, :pRequestno, :pOutRequestnos)",
+    "parameters" : [ {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "T",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00026",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pTechcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "AP1300019A",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pTechseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pRequestno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "N",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutRequestnos",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimRequestnosResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutRequestnos",
+        "fieldName" : "poutRequestnos",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimRequestnosResponsePoutRequestnos",
+          "list" : true,
+          "properties" : [ {
+            "name" : "REQUESTNO",
+            "fieldName" : "requestno",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "ITEMNO",
+            "fieldName" : "itemno",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Byte",
+              "list" : false
+            }
+          }, {
+            "name" : "REQSTS",
+            "fieldName" : "reqsts",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CLICOD",
+            "fieldName" : "clicod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "GARMENT",
+            "fieldName" : "garment",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "RELDATE",
+            "fieldName" : "reldate",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.time.LocalDateTime",
+              "list" : false
+            }
+          }, {
+            "name" : "SMPCTYCOD",
+            "fieldName" : "smpctycod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SAMEASQUERYREQUESTNO",
+            "fieldName" : "sameasqueryrequestno",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "BARCODENO",
+            "fieldName" : "barcodeno",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CNT",
+            "fieldName" : "cnt",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigInteger",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getProcEM1000PK0_ANIM_SltGrp" : {
+    "name" : "getProcEM1000PK0_ANIM_SltGrp",
+    "description" : "Select the group name from the drop down",
+    "version" : "V2",
+    "procedureString" : "CALL EM1000PK0_ANIM.sproc_SltGrp( :pUsrid, :pPrgid, :pOutSltGrp)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00026",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "T",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutSltGrp",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimSltGrpResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutSltGrp",
+        "fieldName" : "poutSltGrp",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimSltGrpResponsePoutSltGrp",
+          "list" : true,
+          "properties" : [ {
+            "name" : "PROCESSGROUP",
+            "fieldName" : "processgroup",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "PROCESSGROUPDESC",
+            "fieldName" : "processgroupdesc",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getProcEM1000PK0_ANIM_SltTheme" : {
+    "name" : "getProcEM1000PK0_ANIM_SltTheme",
+    "description" : "List of value of the theme for the group",
+    "version" : "V2",
+    "procedureString" : "CALL EM1000PK0_ANIM.sproc_SltTheme( :pUsrid, :pPrgid, :pGrp, :pOutTheme)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00026",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "T",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pGrp",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "STRIPE",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutTheme",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimSltThemeResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutTheme",
+        "fieldName" : "poutTheme",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimSltThemeResponsePoutTheme",
+          "list" : true,
+          "properties" : [ {
+            "name" : "PROCESSGROUP",
+            "fieldName" : "processgroup",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SEQ",
+            "fieldName" : "seq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Short",
+              "list" : false
+            }
+          }, {
+            "name" : "THEME",
+            "fieldName" : "theme",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "INPBY",
+            "fieldName" : "inpby",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "INPDATE",
+            "fieldName" : "inpdate",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.time.LocalDateTime",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getProcEM1000PK0_ANIM_animcode_usage" : {
+    "name" : "getProcEM1000PK0_ANIM_animcode_usage",
+    "description" : "Get Pattern code references",
+    "version" : "V2",
+    "procedureString" : "CALL EM1000PK0_ANIM.sproc_get_animcode_usage( :pPrgid, upper(:pUsrid), :pTechcode, :pOutOrderlist)",
+    "parameters" : [ {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "T",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00026",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pTechcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "ST1202828D-01",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutOrderlist",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimAnimcodeUsageResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutOrderlist",
+        "fieldName" : "poutOrderlist",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimAnimcodeUsageResponsePoutOrderlist",
+          "list" : true,
+          "properties" : [ {
+            "name" : "REQUESTORDNUM",
+            "fieldName" : "requestordnum",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CLICOD",
+            "fieldName" : "clicod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "REQSTS",
+            "fieldName" : "reqsts",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "REQTYPE",
+            "fieldName" : "reqtype",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SSHPDAT",
+            "fieldName" : "sshpdat",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.time.LocalDateTime",
+              "list" : false
+            }
+          }, {
+            "name" : "TECHCODE",
+            "fieldName" : "techcode",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "IMG",
+            "fieldName" : "img",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getProcEM1000PK0_ANIM_get_thumbnail" : {
+    "name" : "getProcEM1000PK0_ANIM_get_thumbnail",
+    "description" : "get image for QryPatternCodeReferences",
+    "version" : "V2",
+    "procedureString" : "CALL EM1000PK0_ANIM.sproc_get_thumbnail( :pParam1, :pParam2, :pOutImg)",
+    "parameters" : [ {
+      "name" : "pParam1",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "ORDER",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pParam2",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1200327A",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutImg",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimGetThumbnailResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutImg",
+        "fieldName" : "poutImg",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "byte[]",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "getProcEM1000PK0_ANIM_query_dsgproposaloptions" : {
+    "name" : "getProcEM1000PK0_ANIM_query_dsgproposaloptions",
+    "description" : "query_dsgproposaloptions",
+    "version" : "V2",
+    "procedureString" : "CALL EM1000PK0_ANIM.sproc_query_dsgproposaloptions( :pPrgid, upper(:pUsrid), :pDsgproposaloption, :pOutSimilaritems)",
+    "parameters" : [ {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "T",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00026",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDsgproposaloption",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "16FP000006/007B",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutSimilaritems",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimQueryDsgproposaloptionsResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutSimilaritems",
+        "fieldName" : "poutSimilaritems",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimQueryDsgproposaloptionsResponsePoutSimilaritems",
+          "list" : true,
+          "properties" : [ {
+            "name" : "DSGREQUESTNO",
+            "fieldName" : "dsgrequestno",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SELECTIONSTS",
+            "fieldName" : "selectionsts",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "PROPOSALNO",
+            "fieldName" : "proposalno",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "PROPOSALOPTION",
+            "fieldName" : "proposaloption",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "DESIGNER",
+            "fieldName" : "designer",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "DSGTYPE",
+            "fieldName" : "dsgtype",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "THEMECATEGORY",
+            "fieldName" : "themecategory",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "GENERALTHEME",
+            "fieldName" : "generaltheme",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SSNCOD",
+            "fieldName" : "ssncod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SAMEASQUERYOPTION",
+            "fieldName" : "sameasqueryoption",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "MIMETYPE",
+            "fieldName" : "mimetype",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CNT",
+            "fieldName" : "cnt",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigInteger",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getProcEM1000PK0_ANIM_query_orders" : {
+    "name" : "getProcEM1000PK0_ANIM_query_orders",
+    "description" : "Get the list of orders",
+    "version" : "V2",
+    "procedureString" : "CALL EM1000PK0_ANIM.sproc_query_orders( :pPrgid, upper(:pUsrid), :pTechcode, :pTechseq, :pOrdnum, :pOutOrders)",
+    "parameters" : [ {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "T",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00026",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pTechcode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "AP1201011A",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pTechseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOrdnum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "S000001",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutOrders",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimQueryOrdersResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutOrders",
+        "fieldName" : "poutOrders",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcEm1000pk0AnimQueryOrdersResponsePoutOrders",
+          "list" : true,
+          "properties" : [ {
+            "name" : "ORDNUM",
+            "fieldName" : "ordnum",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "ORDSTS",
+            "fieldName" : "ordsts",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CLICOD",
+            "fieldName" : "clicod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "GMTSEQ",
+            "fieldName" : "gmtseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "GMTDES",
+            "fieldName" : "gmtdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "GARMENT",
+            "fieldName" : "garment",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SSHPDAT",
+            "fieldName" : "sshpdat",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.time.LocalDateTime",
+              "list" : false
+            }
+          }, {
+            "name" : "QTYORD",
+            "fieldName" : "qtyord",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Integer",
+              "list" : false
+            }
+          }, {
+            "name" : "CTYCOD",
+            "fieldName" : "ctycod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SAMEASQUERYORDER",
+            "fieldName" : "sameasqueryorder",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "BARCODENO",
+            "fieldName" : "barcodeno",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CNT",
+            "fieldName" : "cnt",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigInteger",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getProcSY2110PK0_get_ImagecardForSample" : {
+    "name" : "getProcSY2110PK0_get_ImagecardForSample",
+    "description" : "Get image for sample",
+    "version" : "V2",
+    "procedureString" : "CALL SY2110PK0.sproc_WVM_get_imagecard( :pUsrid, upper(:pPrgid), :pLibraryCat, :pDocid, :pOutDoc)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00026",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "T",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pLibraryCat",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "SAMPLEPICTURE",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDocid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "17000154SS00/00",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutDoc",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcSy2110pk0GetImagecardForSampleResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutDoc",
+        "fieldName" : "poutDoc",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "byte[]",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "getProcSY2110PK0_get_imagecardForOrder" : {
+    "name" : "getProcSY2110PK0_get_imagecardForOrder",
+    "description" : "image for Orders",
+    "version" : "V2",
+    "procedureString" : "CALL SY2110PK0.sproc_WVM_get_imagecard( upper(:pUsrid), :pPrgid, :pLibraryCat, :pDocid, :pOutDoc)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00026",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "T",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pLibraryCat",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "PPSAMPLEPICTURE",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDocid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1200327A",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutDoc",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcSy2110pk0GetImagecardForOrderResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutDoc",
+        "fieldName" : "poutDoc",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "byte[]",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "getProcSY2110PK0_get_imagecardForPropOpt" : {
+    "name" : "getProcSY2110PK0_get_imagecardForPropOpt",
+    "description" : "Image for Proposal Option",
+    "version" : "V2",
+    "procedureString" : "CALL SY2110PK0.sproc_WVM_get_imagecard( upper(:pUsrid), :pPrgid, :pLibraryCat, :pDocid, :pOutDoc)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00026",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "EM1000W70",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pLibraryCat",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "DESIGNPROPOSALOPTION",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDocid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "16TN000003",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutDoc",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcSy2110pk0GetImagecardForPropOptResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutDoc",
+        "fieldName" : "poutDoc",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "byte[]",
+          "list" : false
+        }
+      } ]
+    }
+  }
+}
